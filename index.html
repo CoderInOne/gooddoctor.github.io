@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <title>模型</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicons -->
+    <link href="img/favicon.jpg" rel="icon">
+    <link href="img/favicon.jpg" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Open+Sans:300,300i,400,400i,700,700i"
+        rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+
+            <div id="logo" class="pull-left">
+                <!-- <h1><a href="#intro" class="scrollto">肺癌随访</a></h1> -->
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <a href="#intro"><img src="img/logo.png" alt="" title=""></a>
+            </div>
+
+            <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                    <li class="menu-active"><a href="#intro">主页</a></li>
+                    <li><a href="#model">预测模型</a></li>
+                    <li><a href="nsclc.html">English version</a></li>
+                </ul>
+            </nav>
+            <!-- #nav-menu-container -->
+        </div>
+    </header>
+    <!-- #header -->
+
+   
+    <!-- Intro Section -->
+
+    <section id="intro">
+
+        <div class="intro-text">
+          <h2>欢迎使用</h2>
+          <p>非小细胞肺癌部位特异性复发概率预测模型</p>
+        
+        
+          <!-- Start of CuterCounter Code -->
+          <a href="https://www.cutercounter.com/" target="_blank" class="btn-get-started scrollto">
+            访问人次：<img src="https://www.cutercounter.com/hits.php?id=guqoacd&nd=6&style=1" border="0" alt="visitor counter"></a>
+          <!-- End of CuterCounter Code -->
+        
+          <a href="#model" class="btn-get-started scrollto">开始预测</a>
+        </div>
+
+        <!-- <div class="product-screens">
+
+            <div class="product-screen-1 wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.6s">
+                <img src="img/product-screen-1.png" alt="">
+            </div>
+
+            <div class="product-screen-2 wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.6s">
+                <img src="img/product-screen-2.png" alt="">
+            </div>
+
+            <div class="product-screen-3 wow fadeInUp" data-wow-duration="0.6s">
+                <img src="img/product-screen-3.png" alt="">
+            </div>
+
+        </div> -->
+
+    </section>
+    <!-- #intro -->
+
+    <main id="main">
+      <section id="model">
+        <div class="container-fluid">
+          <div class="section-header">
+            <h3 class="section-title">预测模型</h3>
+            <span class="section-divider"></span>
+            <p class="section-description">
+              请输入病人信息
+            </p>
+          </div>
+    
+          <div class="row">
+            <div class="col-lg-6 wow fadeInLeft">
+              <form id="form" autocomplete="off" onsubmit="return false">
+                <!-- 问题1 -->
+                <fieldset class="form-group">
+                  <div class="row">
+                    <legend class="col-form-label col-sm-3 pt-0">1. 吸烟史</legend>
+                    <div class="col-sm-8">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Smoking" id="q1_1" value=1 required>
+                        <label class="form-check-label" for="q1_1">
+                          曾经或目前吸烟
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Smoking" id="q1_2" value=0>
+                        <label class="form-check-label" for="q1_2">
+                          从不吸烟
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+    
+                <!-- 问题2 -->
+                <fieldset class="form-group">
+                  <div class="row">
+                    <legend class="col-form-label col-sm-3 pt-0">2. 病理类型</legend>
+                    <div class="col-sm-8">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Histology" id="q2_1" value=3 required>
+                        <label class="form-check-label" for="q2_1">
+                          鳞癌
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Histology" id="q2_2" value=2>
+                        <label class="form-check-label" for="q2_2">
+                          腺泡亚型为主肺腺癌
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Histology" id="q2_3" value=2>
+                        <label class="form-check-label" for="q2_3">
+                          乳头亚型为主肺腺癌
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Histology" id="q2_4" value=2>
+                        <label class="form-check-label" for="q2_4">
+                          侵袭性粘液腺癌
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Histology" id="q2_5" value=1>
+                        <label class="form-check-label" for="q2_5">
+                          微乳头亚型为主肺腺癌
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Histology" id="q2_6" value=1>
+                        <label class="form-check-label" for="q2_6">
+                          实体亚型为主肺腺癌
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+    
+                <!-- 问题3 -->
+                <div class="form-group row">
+                  <label for="q3" class="col-sm-3 col-form-label">3. 肿瘤病理直径(cm)</label>
+                  <div class="col-sm-3">
+                    <input type="number" class="form-control" id="q3" name="Size" placeholder="请输入肿瘤最大直径" min="0" max="20" step="0.01" required>
+                  </div>
+                </div>
+    
+                <!-- 问题4 -->
+                <fieldset class="form-group">
+                  <div class="row">
+                    <legend class="col-form-label col-sm-3 pt-0">4. 脉管侵犯</legend>
+                    <div class="col-sm-8">
+                      <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="LVI" id="q4_1" value=1 required>
+                        <label class="form-check-label" for="q4_1">
+                          有
+                        </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="LVI" id="q4_2" value=0>
+                        <label class="form-check-label" for="q4_2">
+                          无
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+    
+                <!-- 问题5 -->
+                <fieldset class="form-group">
+                  <div class="row">
+                    <legend class="col-form-label col-sm-3 pt-0">5. 胸膜侵犯</legend>
+                    <div class="col-sm-8">
+                      <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="VPI" id="q5_1" value=1 required>
+                        <label class="form-check-label" for="q5_1">
+                          有
+                        </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="VPI" id="q5_2" value=0>
+                        <label class="form-check-label" for="q5_2">
+                          无
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+    
+                <!-- 问题6 -->
+                <fieldset class="form-group">
+                  <div class="row">
+                    <legend class="col-form-label col-sm-3 pt-0">6. 淋巴结分期</legend>
+                    <div class="col-sm-8">
+                      <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="N" id="q6_1" value=0 required>
+                        <label class="form-check-label" for="q6_1">
+                          N0
+                        </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="N" id="q6_2" value=1>
+                        <label class="form-check-label" for="q6_2">
+                          N1
+                        </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="N" id="q6_2" value=2>
+                        <label class="form-check-label" for="q6_3">
+                          N2
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+    
+                <!-- 问题7 -->
+                <fieldset class="form-group">
+                  <div class="row">
+                    <legend class="col-form-label col-sm-3 pt-0">7. 病理分期</legend>
+                    <div class="col-sm-8">
+                      <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="Stage" id="q6_1" value=1 required>
+                        <label class="form-check-label" for="q6_1">
+                          I期
+                        </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="Stage" id="q6_2" value=2>
+                        <label class="form-check-label" for="q6_2">
+                          II期
+                        </label>
+                      </div>
+                      <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="Stage" id="q6_2" value=3>
+                        <label class="form-check-label" for="q6_3">
+                          III期
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+    
+                <!-- 问题8 -->
+                <div class="form-group row">
+                  <label for="q8" class="col-sm-3 col-form-label">8. 术后末次阴性随访与手术时间间隔(月)</label>
+                  <div class="col-sm-3">
+                    <input type="number" class="form-control" id="q8" name="times" min="0"
+                      max="100" required>
+                  </div>
+                </div>
+                <!-- 问题9 -->
+                <div class="form-group row">
+                  <label for="q9" class="col-sm-3 col-form-label">9. 本次随访与手术时间间隔(月)</label>
+                  <div class="col-sm-3">
+                    <input type="number" class="form-control" id="q9" name="times2"  min="0"
+                      max="100" required>
+                  </div>
+                </div>
+                <!-- 计算 -->
+                <div class="form-group row" id="submit">
+                  <div class="col-sm-10">
+                      <input type="submit" name="Submit" value="计算" class="submit_button" id="calc_pred_button">
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="col-lg-6 wow fadeInRight">
+                <div id="results">
+                
+                  <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-muted">您的预测结果</span>
+                  </h4>
+                
+                  
+                
+                
+                    <table cellspacing="0" cellpadding="0" border="0" id="pred_table">
+                      <thead>
+                        <tr id="ctl00_ContentPlaceHolderResults_RecurrenceRow">
+                          <th class="no-border-bottom" colspan="2" style="text-align: center">
+                            <a id="ctl00_ContentPlaceHolderResults_RecurrenceLabel" href="#RecurrenceDetails">总体和各部位复发概率</a>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody></tbody>
+                    </table>
+
+                    <div id="result"></div>
+                
+                  
+                
+                </div>
+                </div>
+
+            </div>
+    
+        </div>
+      </section>
+    </main>
+      
+    <!-- Footer -->
+
+  <footer id="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 text-lg-left text-center">
+              <div class="copyright">
+                &copy; Copyright 复旦大学附属肿瘤医院
+              </div>
+              <div class="credits">
+                Designed by <a href="https://bootstrapmade.com/">Corgeek</a>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+                <a href="#intro" class="scrollto">Home</a>
+                <a href="#about" class="scrollto">About</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </footer>
+    
+      <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    
+      <!-- JavaScript Libraries -->
+      <script src="lib/jquery/jquery.min.js"></script>
+      <script src="lib/jquery/jquery-migrate.min.js"></script>
+      <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="lib/easing/easing.min.js"></script>
+      <script src="lib/wow/wow.min.js"></script>
+      <script src="lib/superfish/hoverIntent.js"></script>
+      <script src="lib/superfish/superfish.min.js"></script>
+      <script src="lib/magnific-popup/magnific-popup.min.js"></script>
+    
+      <!-- Contact Form JavaScript File -->
+      <script src="contactform/contactform.js"></script>
+    
+      <!-- Template Main Javascript File -->
+      <script src="js/main.js"></script>
+
+      <script>
+          $("#form").submit(function (e) {
+              e.preventDefault();
+              $("#pred_table").find("tbody").empty();
+              var data = $("form").serializeArray();
+              $.ajax({
+                  url: "http://ec2-18-218-229-188.us-east-2.compute.amazonaws.com/nsclc",
+                  data: data,
+                  success: function (data) {
+                      var preds = data[0];
+                      var algos = ["e", "t", "a", "n", "brain", "bone"];
+                      var column_names = {
+                          "e": "总体复发",
+                          "t": "胸部复发",
+                          "a": "腹部复发",
+                          "n": "颈部复发",
+                          "brain": "脑转移",
+                          "bone": "骨转移"
+                      }
+                      for (var i = 0; i < algos.length; i++) {
+                          $("#pred_table").find("tbody").append("<tr><td>" + column_names[algos[i]] + "</td><td>" + preds[algos[i]] + "%</td></tr>");
+                      }
+                  }
+              })
+          })
+  
+  
+      </script>
+</body>
+
+</html>
